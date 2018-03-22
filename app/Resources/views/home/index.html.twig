@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <h2>Top Wallpaper For Abstract</h2>
+        {% include '::home/best-in-category.html.twig' with {'images':abstract} %}
+    </div>
+
+    <div class="row">
+        <h2>Top Wallpaper For Summer</h2>
+        {% include '::home/best-in-category.html.twig' with {'images':summer} %}
+    </div>
+
+    <div class="row">
+        <h2>Top Wallpaper For Winter</h2>
+        {% include '::home/best-in-category.html.twig' with {'images':winter} %}
+    </div>
+
+    <div class="row">
+        <h2>Random Wallpaper</h2>
+        <div class="row">
+            {% for image in randomiseImages %}
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail"><img src="/images/{{ image }}" alt=""></div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
