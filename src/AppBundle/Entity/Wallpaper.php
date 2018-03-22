@@ -49,6 +49,12 @@ class Wallpaper
      */
     private $height;
 
+    /**
+     * Many Wallpaper have one category
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Category")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     */
+    private $category;
 
     /**
      * Get id
@@ -154,6 +160,27 @@ class Wallpaper
     public function getHeight()
     {
         return $this->height;
+    }
+
+    /**
+     * get Category
+     * @return mixed
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * set Category
+     * @param Category $category
+     *
+     * @return Wallpaper
+     */
+    public function setCategory(Category $category = null)
+    {
+        $this->category = $category;
+        return $this;
     }
 }
 
