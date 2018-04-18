@@ -182,5 +182,21 @@ class Wallpaper
         $this->category = $category;
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    function __toString()
+    {
+        return $this->filename;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->filename;
+    }
 }
 
