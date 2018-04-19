@@ -57,6 +57,13 @@ class Wallpaper
     private $category;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="file", type="string")
+     */
+    private $file;
+
+    /**
      * Get id
      *
      * @return int
@@ -181,6 +188,22 @@ class Wallpaper
     {
         $this->category = $category;
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
+     * @param string $file
+     */
+    public function setFile(string $file)
+    {
+        $this->file = $file;
     }
 
     /**
