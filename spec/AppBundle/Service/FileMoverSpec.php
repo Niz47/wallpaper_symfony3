@@ -19,7 +19,7 @@ class FileMoverSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('AppBundle\Service\FileMover');
+        $this->shouldHaveType('AppBundle\Service\LocalFileSystemFileMover');
     }
 
     function it_can_move_a_file_from_temporary_to_controlled_storage()

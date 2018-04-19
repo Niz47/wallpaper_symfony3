@@ -3,7 +3,7 @@
 namespace spec\AppBundle\Event\Listener;
 
 use AppBundle\Entity\Category;
-use AppBundle\Service\FileMover;
+use AppBundle\Service\LocalFileSystemFileMover;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
 use PhpSpec\ObjectBehavior;
@@ -13,7 +13,7 @@ class WallpaperUploadListenerSpec extends ObjectBehavior
 {
     private $fileMover;
 
-    function let(FileMover $fileMover)
+    function let(LocalFileSystemFileMover $fileMover)
     {
         $this->beConstructedWith($fileMover);
         $this->fileMover = $fileMover;
